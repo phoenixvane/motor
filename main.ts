@@ -1,11 +1,12 @@
 input.onButtonPressed(Button.A, function () {
-    while (true) {
-        pins.servoWritePin(AnalogPin.P0, 0)
-        basic.pause(1000)
-        pins.servoWritePin(AnalogPin.P0, 180)
-        basic.pause(1000)
-    }
+    うごく += 1
+    pins.servoWritePin(AnalogPin.P0, うごく * 10)
 })
+input.onButtonPressed(Button.B, function () {
+    うごく = 0
+})
+let うごく = 0
+うごく = 0
 basic.forever(function () {
-	
+    basic.showString("" + (うごく))
 })
