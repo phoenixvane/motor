@@ -7,6 +7,7 @@ input.onButtonPressed(Button.B, function () {
     pins.servoWritePin(AnalogPin.P0, うごく * 10)
 })
 let うごく = 0
+basic.showString("motor")
 うごく = -1
 basic.forever(function () {
     basic.showString("" + (うごく))
