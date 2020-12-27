@@ -1,14 +1,13 @@
+radio.onReceivedNumber(function (receivedNumber) {
+    pins.servoWritePin(AnalogPin.P0, 0)
+    basic.pause(500)
+    pins.servoWritePin(AnalogPin.P0, 180)
+    basic.pause(500)
+})
 input.onButtonPressed(Button.A, function () {
-    うごく += 1
-    pins.servoWritePin(AnalogPin.P0, うごく * 10)
+    radio.sendNumber(0)
 })
-input.onButtonPressed(Button.B, function () {
-    うごく = 0
-    pins.servoWritePin(AnalogPin.P0, うごく * 10)
-})
-let うごく = 0
-basic.showString("motor")
-うごく = -1
+radio.setGroup(1)
 basic.forever(function () {
-    basic.showString("" + (うごく))
+	
 })
